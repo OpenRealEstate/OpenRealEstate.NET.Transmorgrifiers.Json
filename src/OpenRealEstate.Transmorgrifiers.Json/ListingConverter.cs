@@ -24,13 +24,13 @@ namespace OpenRealEstate.Transmorgrifiers.Json
         /// <inheritdoc />
         protected override Listing Create(Type objectType, JObject jObject)
         {
-            const string fieldName = "ListingType";
+            const string propertyName = "listingType";
 
-            var value = jObject[fieldName]?.ToString();
+            var value = jObject[propertyName ]?.ToString();
             if (string.IsNullOrWhiteSpace(value))
             {
                 throw new Exception(
-                    $"Failed to find the field '{fieldName}' which is expected, so we know which type of Listing instance to deserialize the data into.");
+                    $"Failed to find the json-property '{propertyName }' which is expected so we know which type of Listing instance to deserialize the data into. Please make sure all the json properties are CamelCased and there exist the property called '{propertyName}' with one of these values: residential, rental, land or rural. e.g. \"listingType\": \"residential\".");
             }
 
             if (value.Equals("Residential", StringComparison.OrdinalIgnoreCase))
@@ -54,7 +54,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json
             }
 
             throw new Exception(
-                $"Invalid value found in the expected field '{fieldName}'. Only the following values (ie. listing types) as supported: residential, rental, land or rural.");
+                $"Invalid value found in the expected json-property '{propertyName}'. Only the following values (ie. listing types) as supported: residential, rental, land or rural.");
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 using OpenRealEstate.Core;
 
 namespace OpenRealEstate.Transmorgrifiers.Json
@@ -11,8 +12,13 @@ namespace OpenRealEstate.Transmorgrifiers.Json
         /// Some common Json settings for serialization.
         /// The emphasis here is on 'READABILITY' -> making the json look pretty (instead of a minimal file size).
         /// </summary>
-        internal static JsonSerializerSettings JsonSerializerSettings => new JsonSerializerSettings
+        /// <remarks>- Camel-cased property names. i.e. user or firstName or pewPew.<br/>
+        ///          - Formatting is indented.<br/>
+        ///          - Requires a property "listingType" : Residential | Rental | Land | Rural
+        ///          - Can auto parse/convert the REA 'StatusType' to the ORE StatusType.</remarks>
+        public static JsonSerializerSettings JsonSerializerSettings => new JsonSerializerSettings
         {
+            ContractResolver = new CamelCasePropertyNamesContractResolver(), // Lowercase, first character.
             Converters = new JsonConverter[]
             {
                 new ListingConverter(),
@@ -34,12 +40,22 @@ namespace OpenRealEstate.Transmorgrifiers.Json
 
         public static Listing DeserializeObject(string json)
         {
+            return DeserializeObject<Listing>(json);
+        }
+
+        public static Listing DeserializeObject<T>(string json) where T : Listing
+        {
             return JsonConvert.DeserializeObject<Listing>(json, JsonSerializerSettings);
         }
 
         public static IEnumerable<Listing> DeserializeObjects(string json)
         {
-            return JsonConvert.DeserializeObject<IEnumerable<Listing>>(json, JsonSerializerSettings);
+            return DeserializeObjects<Listing>(json);
+        }
+
+        public static IEnumerable<T> DeserializeObjects<T>(string json) where T : Listing
+        {
+            return JsonConvert.DeserializeObject<IEnumerable<T>>(json, JsonSerializerSettings);
         }
     }
 }

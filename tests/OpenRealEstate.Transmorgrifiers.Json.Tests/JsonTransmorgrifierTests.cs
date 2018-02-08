@@ -25,7 +25,6 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests
             {
                 // Arrange.
                 var existingListing = CreateListings(listingType, listingCount);
-                //var json = existingListing.SerializeObject();
                 var json = JsonConvertHelpers.SerializeObject(existingListing);
                 var transmorgrifier = new JsonTransmorgrifier();
 
@@ -95,7 +94,6 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests
             {
                 // Arrange.
                 var existingListing = CreateListings(typeof(ResidentialListing), 1);
-                //var json = existingListing.SerializeObject().Replace("\"Residential\",", "\"blah\",");
                 var json = JsonConvertHelpers.SerializeObject(existingListing).Replace("\"Residential\",", "\"blah\",");
 
                 var transmorgrifier = new JsonTransmorgrifier();
@@ -109,7 +107,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests
                 result.Errors.Count.ShouldBe(1);
                 result.Errors.First()
                       .ExceptionMessage.ShouldBe(
-                          "Invalid value found in the expected field 'ListingType'. Only the following values (ie. listing types) as supported: residential, rental, land or rural.");
+                          "Invalid value found in the expected json-property 'listingType'. Only the following values (ie. listing types) as supported: residential, rental, land or rural.");
                 result.Errors.First().InvalidData.ShouldNotBeNullOrWhiteSpace();
             }
         }

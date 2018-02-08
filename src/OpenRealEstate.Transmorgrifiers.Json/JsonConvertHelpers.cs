@@ -43,9 +43,9 @@ namespace OpenRealEstate.Transmorgrifiers.Json
             return DeserializeObject<Listing>(json);
         }
 
-        public static Listing DeserializeObject<T>(string json) where T : Listing
+        public static T DeserializeObject<T>(string json) where T : Listing
         {
-            return JsonConvert.DeserializeObject<Listing>(json, JsonSerializerSettings);
+            return JsonConvert.DeserializeObject<T>(json, JsonSerializerSettings);
         }
 
         public static IEnumerable<Listing> DeserializeObjects(string json)

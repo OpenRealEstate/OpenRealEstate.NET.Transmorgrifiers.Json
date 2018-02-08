@@ -6,6 +6,9 @@ using System;
 
 namespace OpenRealEstate.Transmorgrifiers.Json
 {
+    /// <summary>
+    /// Json converter which converts the REAXml StatusType's to the OpenRealEstate StatusTypes.
+    /// </summary>
     public class StatusTypeConverter : StringEnumConverter
     {
         public override bool CanConvert(Type objectType)

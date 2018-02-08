@@ -15,7 +15,6 @@ namespace OpenRealEstate.Transmorgrifiers.Json
 
     public class ListingConverter : JsonCreationConverter<Listing>
     {
-        
         /// <summary>
         /// This JsonConverter isn't used to serialize a Listing, 
         /// otherwise we get some weird circular reference loop, at the root level of the object model!

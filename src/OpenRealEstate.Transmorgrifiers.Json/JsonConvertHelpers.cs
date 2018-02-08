@@ -15,9 +15,9 @@ namespace OpenRealEstate.Transmorgrifiers.Json
         {
             Converters = new JsonConverter[]
             {
-                
-                new StringEnumConverter(),
-                new ListingConverter()
+                new ListingConverter(),
+                new StatusTypeConverter(),
+                new StringEnumConverter()
             },
             Formatting = Formatting.Indented
         };

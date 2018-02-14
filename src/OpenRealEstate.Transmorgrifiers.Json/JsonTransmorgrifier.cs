@@ -11,6 +11,9 @@ namespace OpenRealEstate.Transmorgrifiers.Json
     public class JsonTransmorgrifier : ITransmorgrifier
     {
         /// <inheritdoc />
+        public string Name => "Json";
+
+        /// <inheritdoc />
         public ParsedResult Parse(string data,
                                   Listing existingListing = null,
                                   bool areBadCharactersRemoved = false)

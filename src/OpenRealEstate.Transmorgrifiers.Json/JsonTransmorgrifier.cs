@@ -23,7 +23,10 @@ namespace OpenRealEstate.Transmorgrifiers.Json
                 throw new ArgumentException(nameof(data));
             }
 
-            var result = new ParsedResult();
+            var result = new ParsedResult()
+            {
+                TransmorgrifierName = Name
+            };
 
             JToken token;
 
@@ -60,7 +63,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json
             return result;
         }
 
-        private static ParsedResult ParseObject(string json)
+        private ParsedResult ParseObject(string json)
         {
             if (string.IsNullOrWhiteSpace(json))
             {
@@ -96,7 +99,8 @@ namespace OpenRealEstate.Transmorgrifiers.Json
                              : new List<ParsedError>
                              {
                                  new ParsedError(error.Message, json)
-                             }
+                             },
+                TransmorgrifierName = Name
             };
         }
 

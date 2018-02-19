@@ -19,8 +19,8 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="OpenRealEstate.Core" Version="9.0.0-dev" />
-    <PackageReference Include="OpenRealEstate.Transmorgrifiers.Core" Version="8.0.0-dev" />
+    <PackageReference Include="OpenRealEstate.Core" Version="11.0.0-dev" />
+    <PackageReference Include="OpenRealEstate.Transmorgrifiers.Core" Version="9.0.0-dev" />
   </ItemGroup>
 
 </Project>

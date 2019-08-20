@@ -1,10 +1,11 @@
-﻿using OpenRealEstate.Core.Land;
+using OpenRealEstate.Core.Land;
 using OpenRealEstate.Core.Rental;
 using OpenRealEstate.Core.Residential;
 using OpenRealEstate.Core.Rural;
 using OpenRealEstate.Testing;
 using Shouldly;
 using System;
+using System.IO;
 using System.Linq;
 using Xunit;
 

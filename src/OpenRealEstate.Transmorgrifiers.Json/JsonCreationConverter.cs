@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -50,7 +50,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json
             // Create target object based on JObject.
             var target = Create(objectType, jObject);
 
-            //Create a new reader for this jObject, and set all properties to match the original reader.
+            // Create a new reader for this jObject, and set all properties to match the original reader.
             var jObjectReader = jObject.CreateReader();
             jObjectReader.Culture = reader.Culture;
             jObjectReader.DateParseHandling = reader.DateParseHandling;

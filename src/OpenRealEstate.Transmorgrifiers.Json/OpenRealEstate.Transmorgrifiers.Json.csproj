@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="OpenRealEstate.Transmorgrifiers.Core" Version="16.0.0-dev" />
+    <PackageReference Include="OpenRealEstate.Transmorgrifiers.Core" Version="17.0.0-dev" />
   </ItemGroup>
 
 </Project>

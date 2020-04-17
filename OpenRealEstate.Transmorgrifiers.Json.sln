@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRealEstate.Transmorgrifiers.Json", "src\OpenRealEstate.Transmorgrifiers.Json\OpenRealEstate.Transmorgrifiers.Json.csproj", "{965DCEDF-44E8-4533-AFE8-F05FDB81230C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRealEstate.Transmorgrifiers.Json.Tests", "tests\OpenRealEstate.Transmorgrifiers.Json.Tests\OpenRealEstate.Transmorgrifiers.Json.Tests.csproj", "{7859DC3B-5BA8-4C47-8C00-E5A6E8946D5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRealEstate.Transmorgrifiers.Json.Tests", "tests\OpenRealEstate.Transmorgrifiers.Json.Tests\OpenRealEstate.Transmorgrifiers.Json.Tests.csproj", "{7859DC3B-5BA8-4C47-8C00-E5A6E8946D5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -10,7 +10,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="Homely.Testing" Version="1.1.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
     <PackageReference Include="OpenRealEstate.Testing" Version="11.0.0-dev" />
     <PackageReference Include="Shouldly" Version="3.0.2" />
     <PackageReference Include="xunit.core" Version="2.4.1" />
@@ -23,6 +24,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\OpenRealEstate.Transmorgrifiers.Json\OpenRealEstate.Transmorgrifiers.Json.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Sample Data\old-land-details-sample.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Sample Data\old-frontage-sample.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

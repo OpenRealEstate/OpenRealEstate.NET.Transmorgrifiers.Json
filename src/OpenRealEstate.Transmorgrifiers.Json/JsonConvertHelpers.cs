@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using OpenRealEstate.Core;
+using OpenRealEstate.Transmorgrifiers.Json.CustomConverters;
 
 namespace OpenRealEstate.Transmorgrifiers.Json
 {
@@ -23,7 +24,8 @@ namespace OpenRealEstate.Transmorgrifiers.Json
             {
                 new ListingConverter(),
                 new StatusTypeConverter(),
-                new StringEnumConverter()
+                new StringEnumConverter(),
+                new LandDetailsConverter()
             },
             Formatting = Formatting.Indented
         };

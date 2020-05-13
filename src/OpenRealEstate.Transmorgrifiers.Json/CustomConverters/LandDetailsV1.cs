@@ -12,9 +12,6 @@ namespace OpenRealEstate.Transmorgrifiers.Json.CustomConverters
 
         public UnitOfMeasure Area { get; set; }
 
-        /// <summary>
-        /// Length, in meters.
-        /// </summary>
         public UnitOfMeasure Frontage { get; set; }
 
         public IList<DepthV1> Depths { get; set; }
@@ -24,9 +21,6 @@ namespace OpenRealEstate.Transmorgrifiers.Json.CustomConverters
 
     internal class DepthV1 : UnitOfMeasure
     {
-        /// <summary>
-        /// Which side is this? Left, Right, Front, etc?
-        /// </summary>
         public string Side { get; set; }
     }
 }

@@ -91,6 +91,11 @@ namespace OpenRealEstate.Transmorgrifiers.Json.CustomConverters
             // Added: "sides[]"
 
             var items = JToken.ReadFrom(reader);
+            if (!items.HasValues)
+            {
+                return null;
+            }
+
             var keyValues = items.Children<JProperty>();
 
             var isOldFormat = keyValues.Select(keyValue => keyValue.Name)

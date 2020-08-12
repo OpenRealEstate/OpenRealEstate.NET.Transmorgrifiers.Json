@@ -1,3 +1,4 @@
+using System.IO;
 using System.Linq;
 using OpenRealEstate.Core;
 using OpenRealEstate.Core.Residential;
@@ -9,11 +10,19 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.JsonConvertHelpersTests
 {
     public class DeserializeObjectTests
     {
-        [Fact]
-        public void GivenSomeJsonOfASingleListing_DeserializeObject_ReturnsAListing()
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void GivenSomeJsonOfASingleListing_DeserializeObject_ReturnsAListing(bool isLandDetailsNull)
         {
             // Arrange.
             var listing = FakeListings.CreateAFakeListing<ResidentialListing>();
+
+            if (isLandDetailsNull)
+            {
+                listing.LandDetails = null;
+            }
+
             var json = listing.SerializeObject();
 
             // Act.
@@ -21,6 +30,14 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.JsonConvertHelpersTests
 
             // Assert.
             convertedListing.Id.ShouldBe(listing.Id);
+            if (isLandDetailsNull)
+            {
+                convertedListing.LandDetails.ShouldBeNull();
+            }
+            else
+            {
+                convertedListing.LandDetails.ShouldNotBeNull();
+            }
         }
 
         [Fact]

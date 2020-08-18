@@ -153,8 +153,8 @@ namespace OpenRealEstate.Transmorgrifiers.Json.CustomConverters
             {
                 var frontage = new Side
                 {
-                    Name = "Frontage",
-                    Type = "Meter",
+                    Name = "frontage",
+                    Type = "meters",
                     Value = landDetailsV1.Frontage.Value
                 };
 

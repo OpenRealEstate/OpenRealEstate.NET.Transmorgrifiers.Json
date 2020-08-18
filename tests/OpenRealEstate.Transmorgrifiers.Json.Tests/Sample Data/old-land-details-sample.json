@@ -97,8 +97,8 @@
             "value": 400
         },
         "frontage": {
-            "type": "Meter",
-            "value": 0
+            "type": "blah",
+            "value": 123
         },
         "depths": [
             {

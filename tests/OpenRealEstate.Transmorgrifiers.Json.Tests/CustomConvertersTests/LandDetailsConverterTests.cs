@@ -25,8 +25,8 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
                 {
                     new Side
                     {
-                        Name = "Frontage",
-                        Type = "Meter",
+                        Name = "frontage",
+                        Type = "meters",
                         Value = 2m
                     }
                 },
@@ -59,8 +59,8 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
                 {
                     new Side
                     {
-                        Name = "Frontage",
-                        Type = "Meter",
+                        Name = "frontage",
+                        Type = "meters",
                         Value = 123m
                     },
                     new Side

@@ -154,11 +154,8 @@ namespace OpenRealEstate.Transmorgrifiers.Json.CustomConverters
                 var frontage = new Side
                 {
                     Name = "Frontage",
-                    Length = new UnitOfMeasure
-                    {
-                        Type = "Meter",
-                        Value = landDetailsV1.Frontage.Value
-                    }
+                    Type = "Meter",
+                    Value = landDetailsV1.Frontage.Value
                 };
 
                 landDetails.Sides.Add(frontage);
@@ -171,11 +168,8 @@ namespace OpenRealEstate.Transmorgrifiers.Json.CustomConverters
                              select new Side
                              {
                                  Name = depth.Side,
-                                 Length = new UnitOfMeasure
-                                 {
-                                     Type = depth.Type,
-                                     Value = depth.Value
-                                 }
+                                 Type = depth.Type,
+                                 Value = depth.Value
                              };
 
                 foreach (var depth in depths)

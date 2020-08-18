@@ -24,12 +24,9 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
                     new Side
                     {
                         Name = "Frontage",
-                        Length = new UnitOfMeasure
-                        {
-                            Type = "Meter",
-                            Value = 2m
-                        }
-                    },
+                        Type = "Meter",
+                        Value = 2m
+                    }
                 },
             };
 
@@ -59,20 +56,14 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
                     new Side
                     {
                         Name = "left",
-                        Length = new UnitOfMeasure
-                        {
-                            Type = "m2",
-                            Value = 10.1m
-                        }
+                        Type = "m2",
+                        Value = 10.1m
                     },
                     new Side
                     {
                         Name = "right",
-                        Length = new UnitOfMeasure
-                        {
-                            Type = "m2",
-                            Value = 20.2m
-                        }
+                        Type = "m2",
+                        Value = 20.2m
                     }
                 },
                 CrossOver = "RightThenLeft"
@@ -85,5 +76,5 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
             listing.ShouldNotBeNull();
             listing.LandDetails.ShouldLookLike(expectedLandDetails);
         }
-        }
     }
+}

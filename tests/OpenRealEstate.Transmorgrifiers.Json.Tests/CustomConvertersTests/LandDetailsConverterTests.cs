@@ -41,7 +41,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
         }
 
         [Theory]
-        //[InlineData("old-land-details-sample.json")]
+        [InlineData("old-land-details-sample.json")]
         [InlineData("old-land-details-different-casing-sample.json")]
         public async Task GivenAValidOldLandDetailsJson_Deserialize_PopulatesANewListing(string jsonFile)
         {

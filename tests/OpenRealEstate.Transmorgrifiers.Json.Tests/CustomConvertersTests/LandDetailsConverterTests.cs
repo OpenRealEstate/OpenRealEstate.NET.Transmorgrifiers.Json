@@ -11,11 +11,13 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
 {
     public class LandDetailsConverterTests
     {
-        [Fact]
-        public async Task GivenAValidOldFrontageJson_Deserialize_PopulatesANewListing()
+        [Theory]
+        [InlineData("old-frontage-sample.json")]
+        [InlineData("old-frontage-different-casing-sample.json")]
+        public async Task GivenAValidOldFrontageJson_Deserialize_PopulatesANewListing(string jsonFile)
         {
             // Arrange.
-            var json = await File.ReadAllTextAsync("Sample Data/old-frontage-sample.json");
+            var json = await File.ReadAllTextAsync($"Sample Data/{jsonFile}");
 
             var expectedLandDetails = new LandDetails
             {
@@ -38,11 +40,13 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
             listing.LandDetails.ShouldLookLike(expectedLandDetails);
         }
 
-        [Fact]
-        public async Task GivenAValidOldLandDetailsJson_Deserialize_PopulatesANewListing()
+        [Theory]
+        //[InlineData("old-land-details-sample.json")]
+        [InlineData("old-land-details-different-casing-sample.json")]
+        public async Task GivenAValidOldLandDetailsJson_Deserialize_PopulatesANewListing(string jsonFile)
         {
             // Arrange.
-            var json = await File.ReadAllTextAsync("Sample Data/old-land-details-sample.json");
+            var json = await File.ReadAllTextAsync($"Sample Data/{jsonFile}");
 
             var expectedLandDetails = new LandDetails
             {
@@ -53,6 +57,12 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
                 },
                 Sides = new List<Side>
                 {
+                    new Side
+                    {
+                        Name = "Frontage",
+                        Type = "Meter",
+                        Value = 123m
+                    },
                     new Side
                     {
                         Name = "left",

@@ -99,8 +99,8 @@ namespace OpenRealEstate.Transmorgrifiers.Json.CustomConverters
             var keyValues = items.Children<JProperty>();
 
             var isOldFormat = keyValues.Select(keyValue => keyValue.Name)
-                                     .Intersect(OldPropertyNames)
-                                     .Any();
+                .Intersect(OldPropertyNames, StringComparer.OrdinalIgnoreCase)
+                .Any();
 
             LandDetails landDetails = null;
 

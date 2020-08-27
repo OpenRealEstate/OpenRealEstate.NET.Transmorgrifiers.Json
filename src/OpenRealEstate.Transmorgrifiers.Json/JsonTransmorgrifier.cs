@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
@@ -82,26 +82,30 @@ namespace OpenRealEstate.Transmorgrifiers.Json
                 error = exception;
             }
 
-            return new ParsedResult
+            var parsedResult = new ParsedResult
             {
-                Listings = listing == null
-                               ? null
-                               : new List<ListingResult>
-                               {
-                                   new ListingResult
-                                   {
-                                       Listing = listing,
-                                       SourceData = json
-                                   }
-                               },
-                Errors = error == null
-                             ? null
-                             : new List<ParsedError>
-                             {
-                                 new ParsedError(error.Message, json)
-                             },
+                Listings = new List<ListingResult>(),
+                Errors = new List<ParsedError>(),
                 TransmorgrifierName = Name
             };
+
+            if (listing != null)
+            {
+                var listingResult = new ListingResult
+                {
+                    Listing = listing,
+                    SourceData = json,
+                    Warnings = new List<string>()
+                };
+                parsedResult.Listings.Add(listingResult);
+            }
+
+            if (error != null)
+            {
+                parsedResult.Errors.Add(new ParsedError(error.Message, json));
+            }
+
+            return parsedResult;
         }
 
         private static void MergeParsedResults(ParsedResult source,

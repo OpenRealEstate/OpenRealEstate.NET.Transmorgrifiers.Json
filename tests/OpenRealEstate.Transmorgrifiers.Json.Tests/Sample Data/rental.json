@@ -1,0 +1,135 @@
+{
+    "listingType": "Rental",
+    "availableOn": null,
+    "pricing": {
+        "rentalPrice": 500.0,
+        "paymentFrequencyType": "Monthly",
+        "rentalPriceText": "500",
+        "rentedOn": null,
+        "bond": 2166.67
+    },
+    "buildingDetails": {
+        "area": {
+            "type": null,
+            "value": 0.0
+        },
+        "energyRating": null
+    },
+    "propertyType": "Apartment",
+    "agencyId": "offices/2492",
+    "statusType": "Available",
+    "sourceStatus": "Available",
+    "createdOn": "2020-08-26T03:04:14.8976327Z",
+    "title": "ART DECO APARTMENT WITH NATURAL LIGHT!!",
+    "description": "Stunning Art Deco apartment close to Yarra River, Trams and schools. This apartment is one of eight in the block.\n\nComprising: Polished floor boards throughout with carpet in the bedrooms. Secure entrance, high ceilings, large window in living room with gas fire place, lock up garage for one car. Two good sized bedrooms with built in robes. \n\nAvailable from 31st August 2020. \n\nTo inspect contact agent Lauren Goding 0405 909 550\n\n** Stage 4 Restrictions - Virtual inspections only",
+    "address": {
+        "streetNumber": "Apartment 8, 22-24",
+        "street": "Riversdale Road",
+        "suburb": "Hawthorn",
+        "municipality": null,
+        "state": "Victoria",
+        "countryIsoCode": "AU",
+        "postcode": "3122",
+        "latitude": null,
+        "longitude": null,
+        "displayAddress": "Apartment 8, 22-24 Riversdale Road, Hawthorn, Victoria"
+    },
+    "agents": [
+        {
+            "name": "Lauren Goding",
+            "communications": [
+                {
+                    "details": "0405909550",
+                    "communicationType": "Mobile"
+                },
+                {
+                    "details": "lauren@godingking.com.au",
+                    "communicationType": "Email"
+                }
+            ],
+            "order": 1
+        }
+    ],
+    "images": [
+        {
+            "id": null,
+            "createdOn": "2020-08-26T03:04:14.8976359Z",
+            "order": 1,
+            "url": "https://homelyloader.blob.core.windows.net/images/ba53be4e85554f8f8d8649a32714e4ed.jpeg",
+            "tag": null,
+            "contentType": null
+        },
+        {
+            "id": null,
+            "createdOn": "2020-08-26T03:04:14.8976362Z",
+            "order": 2,
+            "url": "https://homelyloader.blob.core.windows.net/images/499d03bd78054d95ae542b6c13a8e638.jpeg",
+            "tag": null,
+            "contentType": null
+        },
+        {
+            "id": null,
+            "createdOn": "2020-08-26T03:04:14.8976365Z",
+            "order": 3,
+            "url": "https://homelyloader.blob.core.windows.net/images/d3384d2c6688476fbec731770455b171.jpeg",
+            "tag": null,
+            "contentType": null
+        },
+        {
+            "id": null,
+            "createdOn": "2020-08-26T03:04:14.8976367Z",
+            "order": 4,
+            "url": "https://homelyloader.blob.core.windows.net/images/06303fc7ca7c4610a346b430aaa703e0.jpeg",
+            "tag": null,
+            "contentType": null
+        },
+        {
+            "id": null,
+            "createdOn": "2020-08-26T03:04:14.897637Z",
+            "order": 5,
+            "url": "https://homelyloader.blob.core.windows.net/images/aed63ca1151b4d1898bb6a65fee667cd.jpeg",
+            "tag": null,
+            "contentType": null
+        }
+    ],
+    "floorPlans": [],
+    "videos": [],
+    "documents": [],
+    "inspections": [],
+    "landDetails": {
+        "area": {
+            "type": "Square Meter",
+            "value": 0.0
+        },
+        "frontage": {
+            "type": "Meter",
+            "value": 0.0
+        },
+        "depths": [],
+        "crossOver": null
+    },
+    "features": {
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "toilets": 1,
+        "carParking": {
+            "garages": 1,
+            "carports": 0,
+            "openSpaces": 0,
+            "totalCount": 1
+        },
+        "ensuites": 0,
+        "livingAreas": 1,
+        "tags": [
+            "Built In Robes",
+            "Dishwasher",
+            "Floorboards",
+            "Gas Heating",
+            "Pet Friendly",
+            "Balcony"
+        ]
+    },
+    "links": [],
+    "id": "857056ee0a804cc093f3957dd3c90c1e",
+    "updatedOn": "2020-08-26T03:04:14.8976327Z"
+}

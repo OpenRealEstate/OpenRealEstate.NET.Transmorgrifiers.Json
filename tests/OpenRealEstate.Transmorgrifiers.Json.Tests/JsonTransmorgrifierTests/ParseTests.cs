@@ -1,5 +1,7 @@
 using System;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using OpenRealEstate.Core.Land;
 using OpenRealEstate.Core.Rental;
 using OpenRealEstate.Core.Residential;
@@ -65,6 +67,25 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests
                     throw new Exception($"Failed to assert the suggested type: '{listingType}'.");
                 }
             }
+        }
+
+        [Fact]
+        public async Task GivenSomeValidJsonViaAFile_Parse_ReturnsAListing()
+        {
+            // Arrange.
+            const string file = "Sample Data/rental.json";
+            var json = await File.ReadAllTextAsync(file);
+            var transmorgrifier = new JsonTransmorgrifier();
+
+            // Act.
+            var listingResult = transmorgrifier.Parse(json);
+
+            // Assert.
+            listingResult.Errors.ShouldBeEmpty();
+            listingResult.Listings.Count.ShouldBe(1);
+
+            var listing = listingResult.Listings.First();
+            listing.Warnings.ShouldBeEmpty();  
         }
 
         [Fact]

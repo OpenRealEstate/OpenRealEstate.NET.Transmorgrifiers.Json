@@ -1,5 +1,6 @@
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using OpenRealEstate.Core;
 using OpenRealEstate.Core.Residential;
 using OpenRealEstate.FakeData;
@@ -118,7 +119,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.JsonConvertHelpersTests
                                                                                                                 StatusType expectedStatusType)
         {
             // Arrange.
-            var listing = FakeData.FakeListings.CreateAFakeResidentialListing();
+            var listing = FakeListings.CreateAFakeResidentialListing();
             var originalJson = JsonConvertHelpers.SerializeObject(listing);
             var json = originalJson.Replace("Available", oldStatusType);
             json.ShouldContain($"\"StatusType\": \"{oldStatusType}\"");

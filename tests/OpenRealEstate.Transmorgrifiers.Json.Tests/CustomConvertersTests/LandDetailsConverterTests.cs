@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using Homely.Testing;
 using OpenRealEstate.Core;
 using OpenRealEstate.Core.Residential;
 using Shouldly;
@@ -37,7 +36,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
 
             // Assert.
             listing.ShouldNotBeNull();
-            listing.LandDetails.ShouldLookLike(expectedLandDetails);
+            listing.LandDetails.ShouldBeEquivalentTo(expectedLandDetails);
         }
 
         [Theory]
@@ -84,7 +83,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests.CustomConvertersTests
 
             // Assert.
             listing.ShouldNotBeNull();
-            listing.LandDetails.ShouldLookLike(expectedLandDetails);
+            listing.LandDetails.ShouldBeEquivalentTo(expectedLandDetails);
         }
     }
 }

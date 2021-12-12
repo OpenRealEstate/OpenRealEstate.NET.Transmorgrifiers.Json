@@ -1,25 +1,36 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net451;netstandard2.0</TargetFrameworks>
-    <Version>0.0.0</Version>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <PackageId>OpenRealEstate.Transmorgrifiers.Json</PackageId>
+    <Product>OpenRealEstate - .NET Json Transmorgrifier</Product>
     <Authors>Justin Adler</Authors>
     <Company>OpenRealEstate</Company>
-    <Product>OpenRealEstate - Services</Product>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/OpenRealEstate/OpenRealEstate/master/LICENSE</PackageLicenseUrl>
+    <Copyright>2018</Copyright>
+    <Description>These are some basic JSON services to help parse, serialize and deserialize OpenRealEstate domain models.</Description>
     <PackageProjectUrl>https://github.com/OpenRealEstate/OpenRealEstate</PackageProjectUrl>
+    <PackageTags>ore ore.net realestate openrealestate rea</PackageTags>
     <PackageIconUrl>https://avatars2.githubusercontent.com/u/7205481?s=64</PackageIconUrl>
     <RepositoryUrl>https://github.com/OpenRealEstate/OpenRealEstate.NET.Transmorgrifiers.Json</RepositoryUrl>
     <RepositoryType>c#</RepositoryType>
-    <PackageTags>ore ore.net realestate openrealestate rea</PackageTags>
-    <Description>These are some basic JSON services to help parse, serialize and deserialize OpenRealEstate domain models.</Description>
-    <Copyright>2018</Copyright>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
 
-
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="OpenRealEstate.Transmorgrifiers.Core" Version="21.0.0-dev" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="OpenRealEstate.Transmorgrifiers.Core" Version="105.0.0-beta" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  
 </Project>

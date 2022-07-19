@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
@@ -17,7 +18,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json
         ///          - Formatting is indented.<br/>
         ///          - Requires a property "listingType" : Residential | Rental | Land | Rural
         ///          - Can auto parse/convert the REA 'StatusType' to the ORE StatusType.</remarks>
-        public static JsonSerializerSettings JsonSerializerSettings => new JsonSerializerSettings
+        public static JsonSerializerSettings JsonSerializerSettings = new JsonSerializerSettings
         {
             ContractResolver = new CamelCasePropertyNamesContractResolver(), // Lowercase, first character.
             Converters = new JsonConverter[]
@@ -38,6 +39,16 @@ namespace OpenRealEstate.Transmorgrifiers.Json
         public static string SerializeObject(this IEnumerable<Listing> listings)
         {
             return JsonConvert.SerializeObject(listings, JsonSerializerSettings);
+        }
+
+        public static void SerializeObject(this IEnumerable<Listing> listings, TextWriter textWriter)
+        {
+            using (var jsonWriter = new JsonTextWriter(textWriter))
+            {
+                var serializer = JsonSerializer.Create(JsonSerializerSettings);
+
+                serializer.Serialize(jsonWriter, listings);
+            }
         }
 
         public static Listing DeserializeObject(string json)

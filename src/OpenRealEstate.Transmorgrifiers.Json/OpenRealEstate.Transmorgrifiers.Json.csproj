@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
@@ -23,7 +23,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="OpenRealEstate.Transmorgrifiers.Core" Version="105.0.0-beta" />
+    <PackageReference Include="OpenRealEstate.Transmorgrifiers.Core" Version="106.0.0-beta" />
   </ItemGroup>
 
   <ItemGroup>

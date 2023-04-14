@@ -85,7 +85,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests
             listingResult.Listings.Count.ShouldBe(1);
 
             var listing = listingResult.Listings.First();
-            listing.Warnings.ShouldBeEmpty();  
+            listing.Warnings.ShouldBeEmpty();
         }
 
         [Fact]

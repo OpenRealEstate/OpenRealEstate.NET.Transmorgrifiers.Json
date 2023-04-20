@@ -46,7 +46,7 @@ namespace OpenRealEstate.Transmorgrifiers.Json.Tests
                 }
                 else if (listingType == typeof(RentalListing))
                 {
-                    RentalListingAssertHelpers.AssertRuralListing(
+                    RentalListingAssertHelpers.AssertRentalListing(
                         (RentalListing)result.Listings[i].Listing,
                         (RentalListing)existingListing[i]);
                 }
